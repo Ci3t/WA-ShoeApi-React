@@ -1,0 +1,8 @@
+
+.nav{
+    background-color: lightblue;
+  
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: center;
+}

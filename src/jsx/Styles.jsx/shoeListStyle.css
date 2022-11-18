@@ -1,0 +1,62 @@
+
+
+.shoeListContainer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+    margin-right: 1em;
+    align-items: center;
+    margin-top: 1em;
+    width: 16em;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: lightslategray;
+}
+
+.shoeImagePreview{
+    border-radius: 15px;
+}
+
+.shoeListText{
+    display: flex;
+    gap: 10px;
+}
+.shoeListLinkButton{
+    /* margin-bottom: 1em;
+    margin-top: 1em; */
+    display: flex; 
+}
+.shoeListLinkButton a{
+
+   color: red;
+   text-decoration: none;
+}
+.shoeListBrandContainer{
+    display:  flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 2em;
+    
+}
+.shoeListBrandContainer button{
+  padding: 4px;
+  margin-left: 3em;
+  /* width: 5em;
+  height: auto; */
+    
+}
+/* export const DeleteBtn = styled.button`
+    background-color: red;
+   
+
+`
+export const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+    align-items: center;
+    
+`
+export const imageBorder = styled.div`
+    border-radius: 62px;
+` */

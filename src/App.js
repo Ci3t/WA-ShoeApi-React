@@ -8,6 +8,8 @@ import ShoesList from "./jsx/ShoesList";
 import ShoeDescription from "./jsx/ShoeDescription";
 import CreateShoeProduct from "./jsx/CreateShoeProduct";
 import { Nav } from "./jsx/Nav";
+import styled from "styled-components";
+
 
 function App() {
   const [shoesList, setShoesList] = useState([]);
@@ -93,6 +95,12 @@ const {id} = useParams()
 
 
   }
+
+ const Container = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    
+    `
  
 
   return (
@@ -101,21 +109,33 @@ const {id} = useParams()
 
       <Routes>
         <Route path="/" element={<HomePage />} />
+        </Routes>
+        <Container>
+
+        
+        <Routes>
         <Route
-          path="/ShoesList"
-          element={shoesList.map((shoe) => {
+        
+        path="/ShoesList"
+        element={
+          
+          shoesList.map((shoe) => {
             return (
-              <ShoesList
+          
+              <ShoesList 
                 key={shoe.id}
                 setShoesList={setShoesList}
                 shoe={shoe}
                 setDeleteProduct={setDeleteProduct}
                 
-              />
+                />
+               
             );
           })}
         />
-      
+        </Routes>
+        </Container>
+        <Routes>
         <Route path="/ShoesList/:id" element={
            <ShoeDescription  setDeleteProduct={setDeleteProduct} shoesList={shoesList} setShoesList={setShoesList} />
         }/>
@@ -139,7 +159,7 @@ const {id} = useParams()
             />
           }
         />
-        <Route path="/" element={<HomePage />} />
+      
       </Routes>
     </div>
   );
