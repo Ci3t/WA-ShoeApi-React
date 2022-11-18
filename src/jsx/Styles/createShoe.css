@@ -1,0 +1,60 @@
+
+form{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    line-height: 2em;
+}
+
+#Product-Title,
+#Product-Brand,
+#Product-Image,
+#Product-Color,
+#Product-Price,
+#Shoe-Size
+{
+    padding: 5px 35px;
+    /* border-radius: 8px; */
+    outline: none;
+    /* outline: red; */
+}
+#Product-Title:focus,
+#Product-Brand:focus,
+#Product-Image:focus,
+#Product-Color:focus,
+#Shoe-Size:focus,
+#Product-Price:focus{
+    /* accent-color: #F7EFEA; */
+    border: 2px lightcoral solid;
+}
+.button{
+    padding:7px;
+    background-color:#393437 ;
+    color: #F7EFEA;
+    border: none;
+    cursor: pointer;
+    margin-top: 1em;
+}
+.button:hover{
+    padding:7px;
+    background-color:#F83721  ;
+    color: #1C1E2B;
+    border: none;
+}
+.input a{
+    padding:7px 10px;
+    margin-top: 4px;
+    background-color:#393437 ;
+    color: #F7EFEA;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+.input a:hover{
+    padding:7px 10px;
+    background-color:#F83721  ;
+    color: #1C1E2B;
+    border: none;
+}

@@ -192,7 +192,7 @@ const ShoeDescription = ({
             </div>
           )}
           
-          <h3>${product.price}</h3>
+          <h3>Price: ${product.price}</h3>
           {isShown && (
             <div className="brandSizeContainer">
               <input
@@ -213,7 +213,7 @@ const ShoeDescription = ({
             </div>
           )}
 
-        <h3>{product.size}</h3>
+        <h3>Size: {product.size}</h3>
           {isShown && (
             <div className="brandPriceContainer">
               <input
@@ -240,7 +240,7 @@ const ShoeDescription = ({
 
         </div>
       )}
-          <button onClick={isShownOnScreen}>Edit</button>
+          <button onClick={isShownOnScreen}>{isShown?'Close':'Edit'}</button>
           
       </div>
     </div>
