@@ -1,4 +1,17 @@
 
+.createProductWrapper{
+    display: flex;
+    justify-content: center;
+   gap: 6em;
+   margin-top: 3em;
+   margin-right: 7em;
+
+}
+.createProductWrapper img{
+   border-radius: 20px;
+   border: #181818 solid 3px;
+}
+
 form{
     display: flex; 
     flex-direction: column;

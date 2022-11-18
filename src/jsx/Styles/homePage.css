@@ -44,6 +44,9 @@ overflow: overlay
 .info-text-Container h2{
     color:#F7EFEA ;
 }
+/* .info-text-Container ul{
+   list-style: none ;
+} */
 .info-text-Container p{
     color:#F7EFEA ;
 }

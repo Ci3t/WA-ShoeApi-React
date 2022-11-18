@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import './Styles/createShoe.css'
 
 const CreateShoeProduct = ({
@@ -15,15 +16,25 @@ const CreateShoeProduct = ({
   setSizeInput,
   sizeInput,
   setCreateProduct,
+  postMsg,
 }) => {
+  
+  let prevImg = 'https://images.unsplash.com/photo-1512990414788-d97cb4a25db3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1415&q=80'
 
-   const handleSubmit=(e)=>{
+
+ 
+  
+  const handleSubmit=(e)=>{
     e.preventDefault();
     }
   return (
+    <div className="createProductWrapper">
+      
+    <img src={imageInput ? imageInput : prevImg}  width={'400px'}/>
+    
     <form onSubmit={handleSubmit}>
       <div>
-
+      
       <label htmlFor="Product-Title">
         <div>Product Title</div>
         <input
@@ -121,7 +132,9 @@ const CreateShoeProduct = ({
       </label>
           </div>
       <button className="button" onClick={setCreateProduct}>Add Product</button>
+      <h1 className="ErrorOrSuccessMsg">{postMsg}</h1>
     </form>
+    </div>
   );
 };
 

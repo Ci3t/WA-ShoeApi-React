@@ -19,16 +19,20 @@ function App() {
   const [priceInput, setPriceInput] = useState("");
   const [sizeInput, setSizeInput] = useState("");
   const [colorInput, setColorInput] = useState("");
+  const [Loading,setLoading] = useState(true)
+  const [postMsg,setPostMsg] = useState('')
 
 const {id} = useParams()
   useEffect(() => {
+    setLoading(true)
     const fetchGetShoesApi = async () => {
       const { data } = await axios.get(
         "https://63738f8d0bb6b698b60f9519.mockapi.io/Shoes",
       );
       
       setShoesList(data);
-
+      
+      setLoading(false)
     };
     fetchGetShoesApi();
   }, []);
@@ -55,11 +59,18 @@ const {id} = useParams()
           price: priceInput,
           size: sizeInput,
         },
-        console.log('Added')
-      );
+        setPostMsg('Shoe Added to List Page Press Back to see Changes'),
+        setTitleInput(''),
+        setBrandInput(''),
+        setPriceInput(''),
+        setSizeInput(''),
+        setColorInput(''),
+        setImageInput(''),
+        );
       setShoesList([...shoesList,data])
     } else {
-      console.log("fill all");
+      setPostMsg('Please Fill All Fields')
+      
     }
   };
 
@@ -122,7 +133,8 @@ const {id} = useParams()
           shoesList.map((shoe) => {
             return (
           
-              <ShoesList 
+              <ShoesList setLoading={setLoading}
+                Loading={Loading}
                 key={shoe.id}
                 setShoesList={setShoesList}
                 shoe={shoe}
@@ -149,7 +161,9 @@ const {id} = useParams()
               imageInput={imageInput}
               colorInput={colorInput}
               priceInput={priceInput}
+              postMsg={postMsg}
               sizeInput={sizeInput}
+              setPostMsg={setPostMsg}
               setTitleInput={setTitleInput}
               setBrandInput={setBrandInput}
               setImageInput={setImageInput}
