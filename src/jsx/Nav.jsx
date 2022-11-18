@@ -1,10 +1,11 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+
 import { Link } from 'react-router-dom';
 import './Styles/styleNav.css'
+
 export const Nav = () => {
   return (
-    <div className={'nav'}>
+    <div className='nav'>
         <Link to='/' style={{ margin: '1rem' }}>
         Home
       </Link>

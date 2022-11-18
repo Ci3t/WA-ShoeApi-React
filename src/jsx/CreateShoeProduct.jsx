@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const CreateShoeProduct = ({
   titleInput,
   setTitleInput,
@@ -24,6 +25,7 @@ const CreateShoeProduct = ({
       <label htmlFor="Product-Title">
         Product Title
         <input
+        
           value={titleInput}
           onChange={(e) => {
             setTitleInput(e.target.value);

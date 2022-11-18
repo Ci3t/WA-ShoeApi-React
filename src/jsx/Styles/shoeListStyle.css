@@ -1,4 +1,20 @@
+/*
+website color pallette maybe: 
 
+#393437 Jet - Brownish 
+#F7EFEA - seashell bg
+#8A6755 - brown 
+#1C1E2B = navy 
+#F83721 - red ruby buttons
+#181818 = black text
+#312520 dark brown
+#212529 - grey
+
+*/
+
+body{
+    background-color: #212529   ;
+}
 
 .shoeListContainer{
     display: flex;
@@ -8,9 +24,13 @@
     align-items: center;
     margin-top: 1em;
     width: 16em;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: lightslategray;
+    padding-right: 10px;
+    height: fit-content;
+    /* border: 1px solid black; */
+    /* border-radius: 10px; */
+    /* background-color: #F7EFEA; */
+    border-right: dashed white 2px;
+    
 }
 
 .shoeImagePreview{
@@ -20,6 +40,7 @@
 .shoeListText{
     display: flex;
     gap: 10px;
+    color: #F7EFEA ;
 }
 .shoeListLinkButton{
     /* margin-bottom: 1em;
@@ -28,23 +49,37 @@
 }
 .shoeListLinkButton a{
 
-   color: red;
+   color: #F7EFEA;
+   background-color: #181818 ;
    text-decoration: none;
+   padding: 6px 12px;
+   border-radius: 7px;
+}
+.shoeListLinkButton a:hover{
+
+  
+   background-color: #F83721  ;
+  
 }
 .shoeListBrandContainer{
     display:  flex;
     flex-direction: row;
     align-items: center;
     margin-left: 2em;
+    color:#F7EFEA 
     
 }
-.shoeListBrandContainer button{
+.shoeListBrandContainer span{
   padding: 4px;
   margin-left: 3em;
-  /* width: 5em;
-  height: auto; */
-    
+  cursor: pointer;    
 }
+.shoeListBrandContainer span:hover{
+    color: #F83721
+}
+/* .shoeListBrandContainer span:hover{
+  color: red;
+} */
 /* export const DeleteBtn = styled.button`
     background-color: red;
    

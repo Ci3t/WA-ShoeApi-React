@@ -1,7 +1,12 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import './Styles.jsx/shoeListStyle.css'
+import './Styles/shoeListStyle.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashCan,fabrands,faShoppingBag } from '@fortawesome/free-solid-svg-icons'
+
+
+
 const ShoesList = ({setShoesList,shoe,shoesList,setDeleteProduct}) => {
 
    const {id} =  useParams()
@@ -10,7 +15,7 @@ const ShoesList = ({setShoesList,shoe,shoesList,setDeleteProduct}) => {
    
       <div className='shoeListContainer'>
 
-     
+
          
            {/* <Link to='/ShoeLise' style={{ margin: '1rem' }}>
         Back
@@ -19,19 +24,28 @@ const ShoesList = ({setShoesList,shoe,shoesList,setDeleteProduct}) => {
         <div className="shoeListBrandContainer">
 
         <h3>Brand: {shoe.brand}</h3>
-        <button onClick={()=>{setDeleteProduct(shoe.id)}}>Delete</button>
+        <span onClick={()=>{setDeleteProduct(shoe.id)}}>
+        <FontAwesomeIcon icon={faTrashCan} />
+
+        
+     
+       
+        </span>
         </div>
-        <div><img className='shoeImagePreview'  width={'200px'} src={shoe.image}/></div>
+        <div><img className='shoeImagePreview'  width={'250px'} src={shoe.image}/></div>
         
         <div className='shoeListText'>
         <span>Price: ${shoe.price } </span>
-        <span> Color: {shoe.color}</span>
+        <span> Color: {shoe.color}<div className='green'></div></span>
 
         </div>
         <div className="shoeListLinkButton">
+        
         <Link  to={`/ShoesList/${shoe.id}`} style={{ margin: '1rem' }}>
-        More Info
+        
+        <FontAwesomeIcon icon={faShoppingBag} />   More Info
       </Link>
+      
       
       </div>
       </div>

@@ -1,0 +1,25 @@
+
+.nav{
+    background-color: #181818 ;
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: center;
+}
+.nav a{
+   text-decoration: none;
+   color: #F7EFEA;
+}
+
+
+/*
+website color pallette maybe: 
+
+#393437 Jet - Brownish 
+#F7EFEA - seashell bg
+#8A6755 - brown 
+#1C1E2B = navy 
+#F83721 - red ruby buttons
+#181818 = black text
+#312520 dark brown
+
+*/
