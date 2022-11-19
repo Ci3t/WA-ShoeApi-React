@@ -4,28 +4,22 @@ import { Link } from 'react-router-dom'
 import './Styles/shoeListStyle.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan,fabrands,faShoppingBag } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react'
-import ClipLoader from "react-spinners/ClipLoader";
 
 
 
-const ShoesList = ({setShoesList,shoe,shoesList,setDeleteProduct,setloading,Loading}) => {
 
+const ShoesList = ({setShoesList,shoe,shoesList,setDeleteProduct,setIsLoading,isLoading}) => {
+
+  setIsLoading(false)
    const {id} =  useParams()
-console.log(Loading);
-//    console.log(params);
-  return (
-    <>
-    {Loading &&  <ClipLoader
-        color={"#36d7b7"}
-        loading={true}
-        cssOverride={{}}
-        size={150}
-        aria-label="Loading Spinner"
-        data-testid="loader"
-      />}
-      {!Loading &&  <div className='shoeListContainer'>
+   //    console.log(params);
+   return (
+     <>
+    {isLoading && 
+    <span className='loader'></span>}
+      {!isLoading &&  <div className='shoeListContainer'>
 
+     {console.log(isLoading)}
 
          
 {/* <Link to='/ShoeLise' style={{ margin: '1rem' }}>

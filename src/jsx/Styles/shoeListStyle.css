@@ -36,12 +36,13 @@ body{
     /* border: 1px solid black; */
     /* border-radius: 10px; */
     /* background-color: #F7EFEA; */
-    border-right: dashed white 2px;
+    border-right: dashed rgb(94, 94, 94) 2px;
     
 }
 
 .shoeImagePreview{
     border-radius: 15px;
+    /* margin-bottom: 7px; */
 }
 .shoeImagePreview:hover{
     transform: scale(1.1);
@@ -117,3 +118,71 @@ export const Container = styled.div`
 export const imageBorder = styled.div`
     border-radius: 62px;
 ` */
+.loader {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color:#de3500 #0000 #fff #0000;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: 1s rotate linear infinite;
+ }
+ .loader:before , .loader:after{
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    border: 10px solid transparent;
+    border-bottom-color:#fff;
+    transform: translate(-10px, 19px) rotate(-35deg);
+  }
+ .loader:after {
+    border-color: #de3500 #0000 #0000 #0000 ;
+    transform: translate(32px, 3px) rotate(-35deg);
+  }
+   @keyframes rotate {
+    100%{    transform: rotate(360deg)}
+  }
+
+  
+@media all and (max-width: 1500px) {
+    
+}
+
+/* //=== */
+@media all and (max-width: 1100px) {
+    
+}
+
+@media all and (max-width: 900px) {
+   
+    
+    
+}
+@media all and (max-width: 768px) {
+    
+     .shoeListContainer{
+        margin-left: 3em;
+     }
+    
+}
+@media all and (max-width: 655px) {
+   
+    
+      /* ! ShoeList */
+      .shoeListContainer{
+        margin-left: 0em;
+     }
+    
+}
+@media all and (max-width: 380px) {
+
+    /* ! HomePage */
+    .shoeListContainer{
+        margin-left: 1em;
+     }
+    
+   
+}

@@ -89,3 +89,16 @@ website color pallette maybe:
 #312520 dark brown
 
 */
+@media all and (max-width: 380px) {
+
+  /* ! HomePage */
+  .shoeListContainer{
+      margin-left: 1em;
+   }
+  
+   .nav .addProduct {
+      /* margin: 1em; */
+      padding: 0;
+  }
+  
+}

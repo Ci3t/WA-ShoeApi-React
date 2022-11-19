@@ -81,3 +81,87 @@ overflow: overlay
     padding: 0.5em 1.5em;
     color: #F7EFEA  ;
 }
+
+
+@media all and (max-width: 1500px) {
+    
+}
+
+/* //=== */
+@media all and (max-width: 1100px) {
+    
+}
+
+@media all and (max-width: 900px) {
+     /* ! HomePage */
+     .logoContainer{
+        width: 360px;
+        margin-top: 4em;
+        z-index: 1;
+     }
+
+    .info-text-Container p{
+        max-width: 800px;
+        font-size: 16px;
+    }
+    .info-text-Container {
+        margin-top: 1em;
+
+    }
+    
+}
+@media all and (max-width: 768px) {
+     /* ! HomePage */
+     .logoContainer{
+        width: 320px;
+        margin-top: 4em;
+        z-index: 1;
+     }
+
+    .info-text-Container p{
+        max-width: 450px;
+        font-size: 16px;
+    }
+    .info-text-Container {
+        margin-top: 1em;
+
+    }
+    
+}
+@media all and (max-width: 500px) {
+     /* ! HomePage */
+    .logoContainer{
+        width: 280px;
+        margin-top: 4em;
+        z-index: 1;
+     }
+
+    .info-text-Container p{
+        max-width: 360px;
+        font-size: 14px;
+    }
+    .info-text-Container {
+        margin-top: 0.7em;
+
+    }
+    
+}
+@media all and (max-width: 380px) {
+
+    /* ! HomePage */
+    .logoContainer{
+        width: 240px;
+        margin-top: 4em;
+        z-index: 1;
+     }
+
+    .info-text-Container p{
+        max-width: 330px;
+        font-size: 13px;
+    }
+    .info-text-Container {
+        margin-top: 0.3em;
+
+    }
+    
+}

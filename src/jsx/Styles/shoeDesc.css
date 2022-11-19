@@ -1,12 +1,14 @@
 h3{
     color: #F7EFEA;
-    border-top: dashed 1px white;
+    /* border-top: dashed 1px white; */
 }
 .wrapperDesc{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 4em;
+    font-family: 'Poppins', sans-serif; 
+    /* font-style: italic; */
 }
 .imgContainer{
     margin-right: 10em;
@@ -15,11 +17,12 @@ h3{
 }
 .imgContainer img{
     border-radius: 20px;
+    border: 2px solid black;
   
 }
 
 .__field{
-    padding: 5px 35px;
+    padding: 5px 19px;
     /* border-radius: 8px; */
     outline: none;
     /* outline: red; */
@@ -62,4 +65,103 @@ h3{
 
 .brandImgContainer{
     margin-left: 1em;
+}
+
+@media all and (max-width: 1500px) {
+    .imgContainer{
+        margin-right: 6em;
+        margin-left: 1em;
+       
+        
+    }
+    
+}
+
+/* //=== */
+@media all and (max-width: 1100px) {
+    .imgContainer{
+        margin-right: 2em;
+        margin-left: 1em;
+       
+        
+    }
+    
+}
+
+@media all and (max-width: 900px) {
+   
+     /* ! ListDesc */
+     /* .wrapperDesc{
+        display: block;
+        line-height: 2.5em;
+        margin-left: 1em;
+    } */
+    .imgContainer{
+        margin-right: 0.5em;
+        margin-left: 1em;
+       
+        
+    }
+    /* .imgContainer img{
+        border-radius: 20px;
+      max-width: 440px;
+    } */
+    
+}
+@media all and (max-width: 768px) {
+      /* ! ListDesc */
+      .wrapperDesc{
+        display: block;
+        line-height: 2.5em;
+        margin-left: 1em;
+    }
+    .imgContainer{
+        margin-left: 4em;
+       
+        
+    }
+    .imgContainer img{
+        border-radius: 20px;
+      max-width: 440px;
+    }
+   
+    
+}
+@media all and (max-width: 655px) {
+   
+    
+     /* ! ListDesc */
+    .wrapperDesc{
+        display: block;
+        line-height: 2.5em;
+        margin-left: 1em;
+    }
+    .imgContainer{
+        margin-left: 4em;
+       
+        
+    }
+    .imgContainer img{
+        border-radius: 20px;
+      max-width: 360px;
+    }
+    
+}
+@media all and (max-width: 380px) {
+
+    /* ! ListDesc */
+    .wrapperDesc{
+        display: block;
+        line-height: 2.5em;
+        margin-left: 1em;
+    }
+    .imgContainer{
+        margin-right: 10em;
+       
+        
+    }
+    .imgContainer img{
+        border-radius: 20px;
+      max-width: 310px;
+    }
 }

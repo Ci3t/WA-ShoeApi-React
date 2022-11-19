@@ -19,20 +19,20 @@ function App() {
   const [priceInput, setPriceInput] = useState("");
   const [sizeInput, setSizeInput] = useState("");
   const [colorInput, setColorInput] = useState("");
-  const [Loading,setLoading] = useState(true)
+  const [isLoading,setIsLoading] = useState(true)
   const [postMsg,setPostMsg] = useState('')
 
 const {id} = useParams()
   useEffect(() => {
-    setLoading(true)
     const fetchGetShoesApi = async () => {
+      setIsLoading(true)
       const { data } = await axios.get(
         "https://63738f8d0bb6b698b60f9519.mockapi.io/Shoes",
-      );
+        );
       
       setShoesList(data);
       
-      setLoading(false)
+      // setIsLoading(false)
     };
     fetchGetShoesApi();
   }, []);
@@ -133,8 +133,8 @@ const {id} = useParams()
           shoesList.map((shoe) => {
             return (
           
-              <ShoesList setLoading={setLoading}
-                Loading={Loading}
+              <ShoesList setIsLoading={setIsLoading}
+                isLoading={isLoading}
                 key={shoe.id}
                 setShoesList={setShoesList}
                 shoe={shoe}

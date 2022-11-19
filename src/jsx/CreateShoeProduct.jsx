@@ -125,7 +125,7 @@ const CreateShoeProduct = ({
             setSizeInput(e.target.value);
           }}
           id="Shoe-Size"
-          min={"1"}
+          min={"16"}
           name="Shoe-Size"
           type="number"
           required/>
