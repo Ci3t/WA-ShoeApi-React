@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import './Styles/shoeListStyle.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashCan,fabrands,faShoppingBag } from '@fortawesome/free-solid-svg-icons'
+import { faTrashCan,faShoppingBag } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -11,8 +11,8 @@ import { faTrashCan,fabrands,faShoppingBag } from '@fortawesome/free-solid-svg-i
 const ShoesList = ({setShoesList,shoe,shoesList,setDeleteProduct,setIsLoading,isLoading,errorMsg,isError}) => {
 
   setIsLoading(false)
-   const {id} =  useParams()
-   //    console.log(params);
+  //  const {id} =  useParams()
+
    return (
      <>
     {isLoading && 

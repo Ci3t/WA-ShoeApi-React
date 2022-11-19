@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import "./App.css";
-import { Route, Routes, Link, useParams } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 import axios from "axios";
 import HomePage from "./jsx/HomePage";
 import ShoesList from "./jsx/ShoesList";
@@ -9,7 +9,7 @@ import ShoeDescription from "./jsx/ShoeDescription";
 import CreateShoeProduct from "./jsx/CreateShoeProduct";
 import { Nav } from "./jsx/Nav";
 import styled from "styled-components";
-import NotFound from "./jsx/NotFound";
+
 
 function App() {
   const [shoesList, setShoesList] = useState([]);
@@ -24,7 +24,7 @@ function App() {
   const [errorMsg, setErrorMsg] = useState("");
   const [isError, setIsError] = useState(false);
 
-  const { id } = useParams();
+
   useEffect(() => {
     const fetchGetShoesApi = async () => {
       try {
@@ -82,7 +82,7 @@ function App() {
     try{
       setIsError(false);
 
-      const { data } = await axios.delete(
+      await axios.delete(
         `https://63738f8d0bb6b698b60f9519.mockapi.io/Shoes/${id}`,
         );
         setShoesList(
@@ -96,27 +96,27 @@ function App() {
         }
   };
 
-  const setUpdateProduct = async (id) => {
+  // const setUpdateProduct = async (id) => {
    
-      // setIsError(false);
-      const { data } = await axios.put(
-        `https://63738f8d0bb6b698b60f9519.mockapi.io/Shoes/${id}`,
-        {
-          brand: brandInput,
-          title: titleInput,
-          image: imageInput,
-          color: colorInput,
-          price: priceInput,
-          size: sizeInput,
-        },
-        );
+  //     // setIsError(false);
+  //     const { data } = await axios.put(
+  //       `https://63738f8d0bb6b698b60f9519.mockapi.io/Shoes/${id}`,
+  //       {
+  //         brand: brandInput,
+  //         title: titleInput,
+  //         image: imageInput,
+  //         color: colorInput,
+  //         price: priceInput,
+  //         size: sizeInput,
+  //       },
+  //       );
         
-        setShoesList((prevData) => {
-          return prevData.map((shoe) => (data.id === shoe.id ? data : shoe));
-          // return [...prevData,res.data]
-        });
+  //       setShoesList((prevData) => {
+  //         return prevData.map((shoe) => (data.id === shoe.id ? data : shoe));
+  //         // return [...prevData,res.data]
+  //       });
      
-  };
+  // };
 
   const Container = styled.div`
     display: flex;
