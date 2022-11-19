@@ -8,7 +8,7 @@ import { faTrashCan,fabrands,faShoppingBag } from '@fortawesome/free-solid-svg-i
 
 
 
-const ShoesList = ({setShoesList,shoe,shoesList,setDeleteProduct,setIsLoading,isLoading}) => {
+const ShoesList = ({setShoesList,shoe,shoesList,setDeleteProduct,setIsLoading,isLoading,errorMsg,isError}) => {
 
   setIsLoading(false)
    const {id} =  useParams()
@@ -17,6 +17,7 @@ const ShoesList = ({setShoesList,shoe,shoesList,setDeleteProduct,setIsLoading,is
      <>
     {isLoading && 
     <span className='loader'></span>}
+    {isError && <p>errorMsg</p>}
       {!isLoading &&  <div className='shoeListContainer'>
 
      {console.log(isLoading)}

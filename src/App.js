@@ -9,7 +9,7 @@ import ShoeDescription from "./jsx/ShoeDescription";
 import CreateShoeProduct from "./jsx/CreateShoeProduct";
 import { Nav } from "./jsx/Nav";
 import styled from "styled-components";
-
+import NotFound from "./jsx/NotFound";
 
 function App() {
   const [shoesList, setShoesList] = useState([]);
@@ -19,26 +19,31 @@ function App() {
   const [priceInput, setPriceInput] = useState("");
   const [sizeInput, setSizeInput] = useState("");
   const [colorInput, setColorInput] = useState("");
-  const [isLoading,setIsLoading] = useState(true)
-  const [postMsg,setPostMsg] = useState('')
+  const [isLoading, setIsLoading] = useState(true);
+  const [postMsg, setPostMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+  const [isError, setIsError] = useState(false);
 
-const {id} = useParams()
+  const { id } = useParams();
   useEffect(() => {
     const fetchGetShoesApi = async () => {
-      setIsLoading(true)
-      const { data } = await axios.get(
-        "https://63738f8d0bb6b698b60f9519.mockapi.io/Shoes",
+      try {
+        setIsError(false);
+        setIsLoading(true);
+        const { data } = await axios.get(
+          "https://63738f8d0bb6b698b60f9519.mockapi.io/Shoes",
         );
-      
-      setShoesList(data);
-      
+
+        setShoesList(data);
+      } catch (e) {
+        setIsError(true);
+        setErrorMsg(e);
+      }
+
       // setIsLoading(false)
     };
     fetchGetShoesApi();
   }, []);
-
-
-
 
   const setCreateProduct = async () => {
     if (
@@ -59,60 +64,64 @@ const {id} = useParams()
           price: priceInput,
           size: sizeInput,
         },
-        setPostMsg('Shoe Added to List Page Press Back to see Changes'),
-        setTitleInput(''),
-        setBrandInput(''),
-        setPriceInput(''),
-        setSizeInput(''),
-        setColorInput(''),
-        setImageInput(''),
-        );
-      setShoesList([...shoesList,data])
+        setPostMsg("Shoe Added to List Page Press Back to see Changes"),
+        setTitleInput(""),
+        setBrandInput(""),
+        setPriceInput(""),
+        setSizeInput(""),
+        setColorInput(""),
+        setImageInput(""),
+      );
+      setShoesList([...shoesList, data]);
     } else {
-      setPostMsg('Please Fill All Fields')
-      
+      setPostMsg("Please Fill All Fields");
     }
   };
 
-  const setDeleteProduct = async(id)=>{
+  const setDeleteProduct = async (id) => {
+    try{
+      setIsError(false);
 
+      const { data } = await axios.delete(
+        `https://63738f8d0bb6b698b60f9519.mockapi.io/Shoes/${id}`,
+        );
+        setShoesList(
+          shoesList.filter((product) => {
+            return id !== product.id;
+          }),
+          );
+        }catch(e){
+          setIsError(true);
+        setErrorMsg(e.message);
+        }
+  };
+
+  const setUpdateProduct = async (id) => {
    
-    const { data } = await axios.delete(
-      `https://63738f8d0bb6b698b60f9519.mockapi.io/Shoes/${id}`)
-
-      setShoesList(shoesList.filter(product=>{
-        return id !== product.id
-      }))
-  }
-
-  const setUpdateProduct = async(id)=>{
-    const { data } = await axios.put(
-      `https://63738f8d0bb6b698b60f9519.mockapi.io/Shoes/${id}`,{
-        brand: brandInput,
-        title: titleInput,
-        image: imageInput,
-        color: colorInput,
-        price: priceInput,
-        size: sizeInput,
-
-      })
-
-      setShoesList(prevData=>{
-      
-        return prevData.map(shoe=>data.id===shoe.id?data:shoe)
-        // return [...prevData,res.data]
+      // setIsError(false);
+      const { data } = await axios.put(
+        `https://63738f8d0bb6b698b60f9519.mockapi.io/Shoes/${id}`,
+        {
+          brand: brandInput,
+          title: titleInput,
+          image: imageInput,
+          color: colorInput,
+          price: priceInput,
+          size: sizeInput,
+        },
+        );
         
-      })
+        setShoesList((prevData) => {
+          return prevData.map((shoe) => (data.id === shoe.id ? data : shoe));
+          // return [...prevData,res.data]
+        });
+     
+  };
 
-
-  }
-
- const Container = styled.div`
+  const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
-    
-    `
- 
+  `;
 
   return (
     <div>
@@ -120,37 +129,39 @@ const {id} = useParams()
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        </Routes>
-        <Container>
+      </Routes>
 
-        
+      <Container>
         <Routes>
-        <Route
-        
-        path="/ShoesList"
-        element={
-          
-          shoesList.map((shoe) => {
-            return (
-          
-              <ShoesList setIsLoading={setIsLoading}
-                isLoading={isLoading}
-                key={shoe.id}
-                setShoesList={setShoesList}
-                shoe={shoe}
-                setDeleteProduct={setDeleteProduct}
-                
+          <Route
+            path="/ShoesList"
+            element={shoesList.map((shoe) => {
+              return (
+                <ShoesList
+                  setIsLoading={setIsLoading}
+                  isLoading={isLoading}
+                  key={shoe.id}
+                  setShoesList={setShoesList}
+                  shoe={shoe}
+                  errorMsg={errorMsg}
+                  setDeleteProduct={setDeleteProduct}
                 />
-               
-            );
-          })}
-        />
+              );
+            })}
+          />
         </Routes>
-        </Container>
-        <Routes>
-        <Route path="/ShoesList/:id" element={
-           <ShoeDescription  setDeleteProduct={setDeleteProduct} shoesList={shoesList} setShoesList={setShoesList} />
-        }/>
+      </Container>
+      <Routes>
+        <Route
+          path="/ShoesList/:id"
+          element={
+            <ShoeDescription
+              setDeleteProduct={setDeleteProduct}
+              shoesList={shoesList}
+              setShoesList={setShoesList}
+            />
+          }
+        />
         <Route
           path="/CreateShoeProduct"
           element={
@@ -162,6 +173,7 @@ const {id} = useParams()
               colorInput={colorInput}
               priceInput={priceInput}
               postMsg={postMsg}
+              isError={isError}
               sizeInput={sizeInput}
               setPostMsg={setPostMsg}
               setTitleInput={setTitleInput}
@@ -173,8 +185,8 @@ const {id} = useParams()
             />
           }
         />
-      
       </Routes>
+      <Routes></Routes>
     </div>
   );
 }

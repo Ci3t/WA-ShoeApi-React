@@ -60,6 +60,10 @@ const ShoeDescription = ({
         },
       );
       setProduct((prev) => (prev = data));
+      setShoesList((prevData) => {
+        return prevData.map((shoe) => (data.id === shoe.id ? data : shoe));
+        // return [...prevData,data]
+      });
       setEditTitle("");
     } else {
       return;
