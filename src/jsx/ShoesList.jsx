@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+
 import { Link } from 'react-router-dom'
 import './Styles/shoeListStyle.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import "./App.css";
-import { Route, Routes, useParams } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import axios from "axios";
 import HomePage from "./jsx/HomePage";
 import ShoesList from "./jsx/ShoesList";

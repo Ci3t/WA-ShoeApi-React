@@ -13,7 +13,7 @@ function HomePage() {
     <div className='mainContainerHomePage'>
       <div className="overlay"></div>
       <div className="logoContainer">
-      <img src={`./Images/logo.png`} />
+      <img alt="logo" src={`./Images/logo.png`} />
       </div>
      
       <div className="info-text-Container">
