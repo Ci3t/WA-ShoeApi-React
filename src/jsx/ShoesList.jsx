@@ -46,7 +46,7 @@ Back
 <div><img className='shoeImagePreview'  width={'250px'} src={shoe.image}/></div>
 
 <div className='shoeListText'>
-<span>Price: ${shoe.price } </span>
+<span>Price: <span className='priceTagColor'>${shoe.price } </span></span>
 <span> Color: {shoe.color}<div className='green'></div></span>
 
 </div>

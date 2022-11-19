@@ -1,3 +1,4 @@
+
 /*
 website color pallette maybe: 
 
@@ -11,6 +12,12 @@ website color pallette maybe:
 #212529 - grey
 
 */
+/* font-family: 'Barlow Condensed', sans-serif;
+font-family: 'Comforter Brush', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Montserrat Subrayada', sans-serif;
+font-family: 'Poppins', sans-serif; */
+
 
 body{
     background-color: #212529   ;
@@ -36,11 +43,21 @@ body{
 .shoeImagePreview{
     border-radius: 15px;
 }
+.shoeImagePreview:hover{
+    transform: scale(1.1);
+}
 
 .shoeListText{
     display: flex;
     gap: 10px;
     color: #F7EFEA ;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-style: italic;
+    font-weight: normal;
+}
+.priceTagColor{
+    color: #fa796b;
+    font-weight: bold;
 }
 .shoeListLinkButton{
     /* margin-bottom: 1em;
@@ -48,7 +65,8 @@ body{
     display: flex; 
 }
 .shoeListLinkButton a{
-
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
    color: #F7EFEA;
    background-color: #181818 ;
    text-decoration: none;
@@ -66,10 +84,14 @@ body{
     flex-direction: row;
     align-items: center;
     margin-left: 2em;
+    font-family: 'Poppins', sans-serif;
+    
+    font-style: italic;
     color:#F7EFEA 
     
 }
 .shoeListBrandContainer span{
+    /* font-family: 'Poppins', sans-serif; */
   padding: 4px;
   margin-left: 3em;
   cursor: pointer;    

@@ -1,3 +1,10 @@
+/* font-family: 'Barlow Condensed', sans-serif;
+font-family: 'Comforter Brush', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Montserrat Subrayada', sans-serif;
+font-family: 'Poppins', sans-serif; */
+
+
 
 .mainContainerHomePage{
 display: flex;
@@ -40,15 +47,23 @@ overflow: overlay
 }
 .info-text-Container span{
     color: #F83721;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: lighter;
 }
 .info-text-Container h2{
     color:#F7EFEA ;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-style: italic;
+    /* font-family: 'Indie Flower', cursive; */
+    
 }
 /* .info-text-Container ul{
    list-style: none ;
 } */
 .info-text-Container p{
     color:#F7EFEA ;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
 }
 .homeLinkCss{
     z-index: 2;
@@ -58,6 +73,7 @@ overflow: overlay
     background-color:#181818 ;
     padding: 0.5em 1.5em;
     color: white;
+    font-family: 'Poppins', sans-serif;
 }
 .homeLinkCss a:hover{
     text-decoration: none;
