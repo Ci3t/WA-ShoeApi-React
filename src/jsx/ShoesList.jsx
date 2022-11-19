@@ -20,13 +20,9 @@ const ShoesList = ({setShoesList,shoe,shoesList,setDeleteProduct,setIsLoading,is
     {isError && <p>errorMsg</p>}
       {!isLoading &&  <div className='shoeListContainer'>
 
-     {console.log(isLoading)}
+  
 
          
-{/* <Link to='/ShoeLise' style={{ margin: '1rem' }}>
-Back
-</Link> */}
-{/* <h1>SHoeList</h1> */}
 <div className="shoeListBrandContainer">
 
 <h3>Brand: {shoe.brand}</h3>
@@ -38,7 +34,7 @@ Back
 
 </span>
 </div>
-<div><img className='shoeImagePreview'  width={'250px'} src={shoe.image}/></div>
+<div><img className='shoeImagePreview' alt="img"   width={'250px'} src={shoe.image}/></div>
 
 <div className='shoeListText'>
 <span>Price: <span className='priceTagColor'>${shoe.price } </span></span>

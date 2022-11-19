@@ -116,7 +116,7 @@ const ShoeDescription = ({
   return (
     <div className="wrapperDesc">
       <div className="imgContainer">
-      <img width={"500px"} src={product.image} />
+      <img width={"500px"} src={product.image} alt="img" />
           {isShown && (
             <div className="brandImgContainer input">
               <input

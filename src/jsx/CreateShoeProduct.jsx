@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+
 import './Styles/createShoe.css'
 
 const CreateShoeProduct = ({
@@ -30,7 +30,7 @@ const CreateShoeProduct = ({
   return (
     <div className="createProductWrapper">
       
-    <img src={imageInput ? imageInput : prevImg}  width={'400px'}/>
+    <img src={imageInput ? imageInput : prevImg} alt="img" width={'400px'}/>
     
     <form onSubmit={handleSubmit}>
       <div>
